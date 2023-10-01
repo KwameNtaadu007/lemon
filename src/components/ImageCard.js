@@ -2,7 +2,7 @@ import React from "react";
 
 const ImageCard = ({image,title,itemPrice,bodyText,footerText}) => {
   return (
-    <div className="card">
+    <div className="card m-2" style={{maxWidth:'20rem'}} >
       <img src={image} className="card-img-top" alt="..." />
       <div className="card-body">
         <span className="d-flex justify-content-between">

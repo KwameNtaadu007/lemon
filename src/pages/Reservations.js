@@ -1,27 +1,47 @@
-import React,{useReducer} from 'react'
-import ReservationForm from './ReservationForm'
-import {reducer,initializeTimes} from '../reducer';
+import React,{useEffect, useState} from 'react'
+import { Link } from 'react-router-dom';
+import ReservationCard from '../components/ReservationCard';
+import { fetchAPI } from '../api/fetchAPI';
+
 
 const Reservations = () => {
-  const triggerInitialize = initializeTimes();
-  const [availableTimes, dispatch] = useReducer(reducer, triggerInitialize);
+  const [reservations, setReservations] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+
+
+  useEffect(()=>{
+       setIsLoading(true);
+     setTimeout(()=>{
+        const data =  fetchAPI();
+          data.then((res)=>{
+            if(res){
+              setReservations(()=>([...res]))
+              setIsLoading(false)
+            }
+          })
+         
+     },1000)
+  },[])
+
 
   
-  // useEffect(()=>{
-  //   const availableTimes = fetchAPI(new Date('09/16/2023'));
-  //   console.log(availableTimes);
-  // },[])
-
   
   return (
-    <div className='container'>
-      <h2 className='m-4'>Reservations</h2>
-      <div className='d-flex align-items-center justify-content-center'>
-          <span className='w-75'>
-          <ReservationForm dispatch={dispatch}   availableTimes={availableTimes}/>
-          </span>
+
+   <div>
+    <div className='primary-bg w-100 '>
+    <div className='container d-flex justify-content-between align-items-center w-100 mb-3 p-2'>
+      <h2 className='m-4 text-white'>Reservations</h2>  <Link className='btn btn-action'  to={'/reservation'}>Reserve A Table</Link>
       </div>
     </div>
+     <div className='container d-flex flex-column justify-content-between align-items-center'>
+      {isLoading&&<div className='small row'>Loading...</div>}
+      <div className='d-flex align-content-start flex-wrap mx-auto my-2'>
+       
+         {reservations&&reservations.map(reservation=><ReservationCard reservation={reservation} key={reservation.id} />)}
+      </div>
+    </div>
+   </div>
   )
 }
 

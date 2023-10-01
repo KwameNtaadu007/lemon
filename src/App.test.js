@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import ReservationForm from './pages/ReservationForm';
+import ReservationForm from './components/ReservationForm';
 
 describe('ReservationForm', () => {
   it('renders the form with input fields and a submit button', () => {
@@ -53,6 +53,6 @@ describe('ReservationForm', () => {
 
 test('Renders the BookingForm heading', () => {
   render(<ReservationForm />);
-  const headingElement = screen.getByText("Book Now");
+  const headingElement = screen.getByText("Reservation Form");
   expect(headingElement).toBeInTheDocument();
 })

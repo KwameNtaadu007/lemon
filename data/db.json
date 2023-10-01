@@ -1,0 +1,53 @@
+{
+  "reservations": [
+    {
+      "id": 1,
+      "reservationDate": "2023-09-29",
+      "reservationTime": "19:00",
+      "guests": 5,
+      "occasion": "Birthday"
+    },
+    {
+      "reservationDate": "2023-09-29",
+      "reservationTime": "23:00",
+      "guests": 1,
+      "occasion": "Engagement",
+      "id": 356.60544219582056
+    },
+    {
+      "reservationDate": "2023-09-30",
+      "reservationTime": "17:00",
+      "guests": 4,
+      "occasion": "Birthday",
+      "id": 715.8440348830452
+    },
+    {
+      "reservationDate": "2023-10-02",
+      "reservationTime": "04:00",
+      "guests": 3,
+      "occasion": "Anniversary",
+      "id": 548.3177560372158
+    },
+    {
+      "reservationDate": "2023-10-02",
+      "reservationTime": "13:00",
+      "guests": 4,
+      "occasion": "Birthday",
+      "id": 61.26192905570049
+    },
+    {
+      "reservationDate": "2023-10-07",
+      "reservationTime": "17:00",
+      "guests": 1,
+      "occasion": "Birthday",
+      "id": 377.1579494887246
+    },
+    {
+      "reservationDate": "2023-10-02",
+      "reservationTime": "17:00",
+      "guests": 1,
+      "occasion": "Birthday",
+      "id": "652.6"
+    }
+  ]
+}

@@ -6,21 +6,14 @@
   --primary-two:#F4CE14;
   --secondary-1:#EE9972;
   --secondary-2:#FBDABB;
-  --secondary-3:#EDEFEE;
+  --secondary-3:#EDEFEE; 
   --secondary-4:#333333;
-}
-
-a{
-  color: #333333;
-}
-a:hover{
-  text-decoration: none;
-  color: inherit;
 }
 
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   box-sizing: border-box;
   font-family:'Karla', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -32,6 +25,42 @@ body {
   background: #fff;
 
 }
+a{
+  color: #333333;
+}
+a:hover{
+  text-decoration: none;
+  color: inherit;
+}
+
+.booking-form select{
+  background-color: var(--secondary-3);
+}
+.booking-form select option{
+  background-color: var(--secondary-3);
+  color: var(--primary-one);
+  padding: 1rem;
+  border-bottom: 1px solid gray;
+}
+
+.primary-bg{
+  background: var(--primary-one);
+  color: var(--secondary-3);
+}
+
+.primary-text{
+  color: var(--primary-one);
+}
+.secondary-bg{
+  background: var(--primary-two);
+  color: var(--primary-one);
+}
+
+.secondary-text{
+  color: var(--primary-two);
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -45,6 +74,13 @@ nav a{
 
 .btn-action{
   background-color: var(--primary-two);
+  font-weight: bold;
+  color: var(--primary-one);
+}
+
+.selected{
+  background:var(--primary-one)!important;
+  color: #EDEFEE !important;
 }
 
 section.jumbotron{
@@ -56,14 +92,36 @@ section.jumbotron{
 
 .jumbotron img{
   position: absolute;
-  max-width: 300px;
+  width: 50%;
+  max-width: 380px;
   max-height: 300px;
-   left:30%; 
+  left:30%; 
 }
 
- .week-special-section{
-  margin-top: 7rem;
+.week-special-section{
+  margin: 7rem auto;
 }
+
+@media (max-width: 768px) {
+  .jumbotron img{
+    position: static;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .jumbotron .rounded-2{
+    display: flex;
+    justify-content: center;
+    margin:3rem auto;
+  }
+  .week-special-section{
+    margin: 2rem auto;
+  }
+}
+
+.foot{
+  background: var(--secondary-4);
+}
+
 
 .card-price{
   color:var(--secondary-1)
@@ -73,7 +131,7 @@ section.jumbotron{
 }
 section.about .col.position-relative div{
   max-height:300px ;
-  max-width: 300px;
+  max-width: 260px;
 }
 section.about .position-absolute{
   top:1rem;
